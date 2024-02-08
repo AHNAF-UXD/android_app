@@ -139,12 +139,13 @@
 
 import 'package:flutter/material.dart';
 //import 'package:device_info/device_info.dart';
-import 'package:system_info/system_info.dart';
+import 'package:system_info2/system_info2.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 //import 'package:disk_space/disk_space.dart';
 //import 'package:storage_details/storage_details.dart';
-import 'package:device_information/device_information.dart';
+//import 'package:device_information/device_information.dart';
 //import 'package:permission_handler/permission_handler.dart';
+//import 'package:system_info_fetch/system_info_fetch.dart';
 
 void main() {
   runApp(MyApp());
@@ -205,33 +206,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Future<void> getDeviceInfo() async {
     DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
     AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
-    //final datali = await StorageDetails.getspace;
-    //int totalStorage = await StorageInfo.getTotalStorage(appDocDir.path);
 
-    late String platformVersion,
-        imeiNo = '',
-        modelName = '',
-        manufacturer = '',
-        deviceName = '',
-        productName = '',
-        cpuType = '',
-        hardware = '';
-    var apiLevel;
-    // Platform messages may fail,
-    // so we use a try/catch PlatformException.
-    try {
-      //platformVersion = await DeviceInformation.platformVersion;
-      imeiNo = await DeviceInformation.deviceIMEINumber;
-      modelName = await DeviceInformation.deviceModel;
-      manufacturer = await DeviceInformation.deviceManufacturer;
-      apiLevel = await DeviceInformation.apiLevel;
-      deviceName = await DeviceInformation.deviceName;
-      productName = await DeviceInformation.productName;
-      cpuType = await DeviceInformation.cpuName;
-      hardware = await DeviceInformation.hardware;
-    } catch (e) {
-      imeiNo = '${e}';
-    }
     // var imeiNo = await DeviceInformation.deviceIMEINumber;
     // var modelName = await DeviceInformation.deviceModel;
     // var manufacturer = await DeviceInformation.deviceManufacturer;
@@ -260,7 +235,7 @@ class _MyHomePageState extends State<MyHomePage> {
       displayDpi = '${androidInfo.displayMetrics.xDpi.round()}';
       // display = androidInfo.display;
 
-      diskSpace = '${imeiNo}';
+      diskSpace = '${"aaaaa"}';
       // display = androidInfo.display;
       // display = androidInfo.display;
       fingerprint = androidInfo.fingerprint;
@@ -346,7 +321,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Text('User space bitness      : ${SysInfo.userSpaceBitness}'),
             SizedBox(height: 20),
             Text('Processor Information:'),
-            for (var processor in SysInfo.processors)
+            for (var processor in SysInfo.cores)
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

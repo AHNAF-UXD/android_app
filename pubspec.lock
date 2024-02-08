@@ -89,14 +89,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "7.0.0"
-  file_utils:
-    dependency: transitive
-    description:
-      name: file_utils
-      sha256: d1e64389a22649095c8405c9e177272caf05139255931c9ff30d53b5c9bcaa34
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.1"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -213,14 +205,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
-  system_info:
+  system_info2:
     dependency: "direct main"
     description:
-      name: system_info
-      sha256: cc51ed8a89f1d2d4113e6d578838583884d453242de5180a096ad5e85d476193
+      name: system_info2
+      sha256: "65206bbef475217008b5827374767550a5420ce70a04d2d7e94d1d2253f3efc9"
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.1"
+    version: "4.0.0"
   term_glyph:
     dependency: transitive
     description:
